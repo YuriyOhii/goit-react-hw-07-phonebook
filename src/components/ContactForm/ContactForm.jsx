@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { NewContact, Input, ErrCaption, Button } from './Contactform.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/operations';
 
 const uniqueId = {
   name: nanoid(),
