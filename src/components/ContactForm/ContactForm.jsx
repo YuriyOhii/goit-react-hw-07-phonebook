@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { Formik } from 'formik';
 import { NewContact, Input, ErrCaption, Button } from './Contactform.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { addContact } from '../../redux/contactsSlice';
 
 const uniqueId = {
@@ -27,7 +27,7 @@ const schema = Yup.object({
 
 export const ContactForm = ({ handleSubmit }) => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const checkContactName = values => {
     const normalizedName = values.name.toLowerCase();
